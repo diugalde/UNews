@@ -8,7 +8,21 @@
 </head>
 <body>
 
-<%= yield %>
-
+  <header class="navbar navbar-static-top navbar-default" id="main-top-bar">
+    <div class="container">
+        <h1><a href=""><i class="fa fa-newspaper-o"></i> UNews</a></h1>
+    </div>
+  </header>
+  
+  <main>
+    <%= yield %>
+  </main>
+  
+  <div class="navbar navbar-default navbar-bottom" id="footerNav">
+    <div class="container">
+      <p id="footerCopyright" class="muted pull-right"> Created by UTeam <i class="fa fa-copyright"></i></p>
+    </div>
+  </div>  
+  
 </body>
 </html>
