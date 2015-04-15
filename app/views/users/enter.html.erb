@@ -9,8 +9,19 @@
       <div id="enter-tabs-content" class="tab-content">
           <div class="tab-pane active" id="login-tab">
             <h4>O entra con: </h4>
-            <a class="social-network-link" href=""><i class="fa fa-twitter-square fa-5x"></i></a>
-            <a class="social-network-link" href=""><i class="fa fa-facebook-square fa-5x"></i></a>
+            <%= form_tag(:controller => "users", :action => "newgplus", :method => "post") do %>
+              <%= hidden_field_tag :fullname %>
+              <%= hidden_field_tag :email %>
+            <% end %>
+            <span id="signinButton">
+              <span
+                class="g-signin"
+                data-callback="signinCallback"
+                data-clientid="729914167073-i3fgamviu9uv8ibmaopstgv1e2nu53fu.apps.googleusercontent.com"
+                data-cookiepolicy="single_host_origin"
+                data-scope="https://www.googleapis.com/auth/plus.login">
+              </span>
+            </span>
           </div>
           <div class="tab-pane" id="register-tab">
             <h2>holito2</h2>
@@ -19,20 +30,4 @@
     </div>
   </div>
 </div>
-
-<script>
-  
-  var hash = window.location.hash;
-  hash && $('ul.nav a[href="' + hash + '"/]').tab('show');
-
-
-
-  $('.nav-tabs a').click(function (e) {
-    $(this).tab('show');
-    var scrollmem = $('body').scrollTop();
-    window.location.hash = this.hash;
-    $('html,body').scrollTop(scrollmem);
-  });
-
-</script>
 

@@ -4,7 +4,4 @@ class PagesController < ApplicationController
     
     def profile
     end
-    
-    def enter
-    end
 end
