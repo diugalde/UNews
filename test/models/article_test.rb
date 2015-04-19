@@ -3,7 +3,7 @@ require 'test_helper'
 class ArticleTest < ActiveSupport::TestCase
     
     def setup
-    	@user = User.create(username: "alberticopai", email: "alberticopai@gmail.com", password: "password")
+    	@user = User.create(username: "alberticopai", email: "alberticopai@gmail.com", encrypted_password: "password")
         @article = @user.articles.build(title: "Loro Loco en Palmares", summary: "Mata a ochenta feligreses en frente de dos pejelagartos", body: "I dont know what to put in here, so i just wrote shit")	
     end
     

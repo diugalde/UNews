@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
     root 'pages#home'
+    
+    devise_for :users
+
     get '/home', to: 'pages#home'
   
     get '/profile', to: 'pages#profile'
@@ -17,6 +20,5 @@ Rails.application.routes.draw do
     
     get '/create_article', to: 'articles#new'
     
-    
-    
+    get '/new_article', to: 'pages#new_article'
 end

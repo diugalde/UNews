@@ -1,9 +1,3 @@
-(function() {
-      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-      po.src = 'https://apis.google.com/js/client:plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})();
-
 function signinCallback(authResult) {
   var token = gapi.auth.getToken();
   var accessToken = token.access_token;
@@ -22,9 +16,11 @@ function signinCallback(authResult) {
       },
       error: function(e) {
         console.log(e);
+        console.log("que mierda");
       }
     });
-  } else if (authResult['error']) {
+  }
+  else if (authResult['error']) {
     $('.is-this-you').html("<h4>Your request could not be completed at this time</h4>");
   };
 }

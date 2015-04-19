@@ -53,20 +53,6 @@
     color: whiteghost;
 }
 
-.img-md {
-    border: 2px solid black;
-    margin-top: 15px;
-    height: 220px;
-    width: 220px;
-}
-
-.img-xs {
-    border: 2px solid black;
-    margin: 5px 0 15px 0;
-    height: 40px;
-    width: 40px;
-}
-
 .info {
     height: 100%;
 }
@@ -79,8 +65,9 @@
 
 .news-box {
     width: 100%;
-    border: 3px solid #337AB7;
-    border-radius: 25px;
+    border-bottom: 2px solid #337AB7;
+    border-right: 5px solid #337AB7;
+    padding-bottom: 5px;
 }
 
 #like-button {
