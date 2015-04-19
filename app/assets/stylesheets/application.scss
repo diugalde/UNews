@@ -14,10 +14,15 @@ $navbar-default-color: $red;
 @import "bootstrap";
 
 // Start of CSS code
+* {
+    box-sizing: border-box;
+}
 
 html, body { 
     height:100%;
 }
+
+
 
 header h1 a:hover {
     color: #47AAFF;

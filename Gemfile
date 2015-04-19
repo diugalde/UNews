@@ -48,3 +48,5 @@ gem 'bootstrap_form'
 gem "font-awesome-rails"
 # Devise for authentication
 gem 'devise'
+# Use omniauth for facebook
+gem 'omniauth-facebook'
