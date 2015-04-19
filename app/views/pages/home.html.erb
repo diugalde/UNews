@@ -4,6 +4,8 @@
     
 </nav>
 
+<button id="test-button">Cargar con Ajax</button>
+
 <div class="container">
     <div class="row">
         <div class="col-md-10" id="news-container">
@@ -24,3 +26,18 @@
         
     </div>
 </div>
+
+
+<div id="test-container"></div>
+<script>
+    
+    $("#test-button").click(function() {
+        $.ajax({
+            url: "/articles/index",
+            async: true,
+            success: function(html){
+              $("#test-container").html(html);
+            }
+        }); 
+    });
+</script>

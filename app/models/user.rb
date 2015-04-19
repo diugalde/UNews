@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          
   
   #Associations
-  has_many :articles
+  #has_many :articles
   
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -7,6 +7,11 @@ class ArticlesController < ApplicationController
         @article = Article.new(article_params)
     end
     
+    def index
+       @articles = Article.all 
+       render :layout => false
+    end
+    
     def edit
     end
     

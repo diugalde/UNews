@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     root 'pages#home'
     
     devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+    
+    get '/articles/index', to: 'articles#index'
 
     get '/home', to: 'pages#home'
   

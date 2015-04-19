@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+articles = Article.create([ {title: "El señor de los anillos 1", summary: "Encontrando un anillo místico", body: "Mejor película del 2010"},
+{title: "El señor de los anillos 2", summary: "Encontrando un anillo místico", body: "Mejor película del 2010"}, {title: "El señor de los anillos 3", summary: "Encontrando un anillo místico", body: "Mejor película del 2010"}])
