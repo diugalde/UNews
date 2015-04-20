@@ -23,6 +23,19 @@ class ArticlesController < ApplicationController
       end
       render :layout => false
     end
+    
+    def show_comments
+      @article_id = params[:id]
+      @comments = Comment.where(:article_id => @article_id)
+      render :layout => false
+    end
+    
+    def comment
+      cont = params[:content]
+      @comment = Comment.new(user_id: current_user.id, article_id: params[:id], content: cont)
+      @comment.save
+      render :layout => false
+    end
       
     def show
       @article = Article.find(params[:id])

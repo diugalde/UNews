@@ -1,0 +1,9 @@
+<li>
+    <div class="commenterName">
+      <p> <%= current_user.email %> </p>
+    </div>
+    <div class="commentText">
+        <p> <%= @comment.content %> </p>
+        <span class="date sub-text"> <%= @comment.created_at %> </span>
+    </div>
+</li>

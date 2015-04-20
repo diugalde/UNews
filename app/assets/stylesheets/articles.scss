@@ -1,0 +1,35 @@
+.slider-box {
+    height: 300px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.article-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.summary-container {
+    height: 300px;
+}
+
+#comment-section {
+    display: none;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.comments-column {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.show-comments-button {
+    margin: 0 auto;
+    clear: both;
+}
+
+#comments {
+    width: 100%;
+}

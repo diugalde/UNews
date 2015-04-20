@@ -1,4 +1,63 @@
+<div class="container">
+    <h1 class="text-center"><%= @article.title %></h1>
+    <hr/>
+    <div class="row">
+        <!-- Empty column -->
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <!-- Image slider -->
+            <div class="slider-box">
+                
+            </div>
+        </div>
+        <div class="col-md-5 summary-container">
+            <!-- Article summary column -->
+            <h3>Resumen</h3>
+            <%= @article.summary %>
+            <% if @article.link %>
+                <a class="article-link" href="<%= @article.link %>">Enlace de referencia</a>
+            <% end %>
+        </div>
+        <!-- Empty column -->
+        <div class="col-md-1"></div>
+    </div>
+    <hr/>
+    <div class="row">
+        <!-- Article body column -->
+        <div class="col-md-10 col-md-offset-1">
+            <%= @article.body %>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <!-- Comment section -->
+        <div class="col-md-10 col-md-offset-1 comments-column">
+            <section id="comment-section">
+                <h2 class="text-center">Comentarios</h2>
+                <div id="comments">
+                    
+                </div>
+            </section>
+            <button value="<%= @article.id %>" class="show-comments-button btn btn-primary">
+                Mostrar Comentarios <i class="fa fa-comments"></i>
+            </button>
+        </div>
+    </div>
+</div>
 
-<%= @article.title %>
-<%= @article.summary %>
-<%= @article.body %>
+<script>
+  $(".show-comments-button").click(function() {
+    var articleId = $(this).attr("value");
+    $.ajax({
+      method: "get",
+      url: "/articles/"+articleId+"/comments",
+      async: true,
+      success: function(html){
+        $('#comments').html(html);
+        $('#comment-section').css("display","block");
+      }
+    }); 
+  });
+</script>
+
+

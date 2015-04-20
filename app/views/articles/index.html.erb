@@ -20,7 +20,6 @@
   
   $(".like-button").click(function() {
     var articleId = $(this).attr("value");
-    console.log(articleId);
     var divTarget = "#like-"+articleId;
     $.ajax({
       method: "get",

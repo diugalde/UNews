@@ -72,14 +72,6 @@
     margin-bottom: 45px;
 }
 
-#like-button {
-    margin-top: 15px;
-}
-
-#more-button {
-    bottom: 0;
-}
-
 .nav-devise-links {
     padding-top: 10px;
     color: white !important;
@@ -87,4 +79,8 @@
 
 .nav-devise-links a {
     color: white !important;
+}
+
+.like-button:hover {
+    color: #337AB7;
 }

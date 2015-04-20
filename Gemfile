@@ -50,3 +50,5 @@ gem "font-awesome-rails"
 gem 'devise'
 # Use omniauth for facebook
 gem 'omniauth-facebook'
+# Use bootstrap form styles
+gem 'bootstrap_form'

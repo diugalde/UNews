@@ -1,0 +1,39 @@
+.comment-list {
+    padding: 0;
+    list-style: none;
+    max-height: 1000px;
+    overflow: auto;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.comment-list li {
+    margin: 0;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.comment-text p {
+    margin: 0;
+    clear: both;
+    float: right;
+    width: 100%;
+}
+
+.sub-text {
+    color: #aaa;
+    font-family: verdana;
+    font-size: 11px;
+    float: right;
+    clear: both;
+}
+
+.commenter-name {
+    float: left;
+    width: 100%;
+}
+
+.comment-form {
+    margin-bottom: 20px;
+    float: right;
+}

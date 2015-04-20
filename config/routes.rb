@@ -17,4 +17,8 @@ Rails.application.routes.draw do
     post '/articles/state', to: 'articles#index_state'
     
     get '/articles/:id/like', to: 'articles#like'
+    
+    get '/articles/:id/comments', to: 'articles#show_comments'
+    
+    post '/articles/:id/comment', to: 'articles#comment'
 end

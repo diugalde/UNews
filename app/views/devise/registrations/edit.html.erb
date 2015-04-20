@@ -11,74 +11,19 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-9">
         <div class="tab-content">
-            <div class="tab-pane active" id="config">
-                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <div class="tab-pane active well" id="config">
+                <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                   <%= devise_error_messages! %>
-                
-                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-                  <% end %>
-                  <h1 class="no">NO ENTIENDO COMO APLICARLE ESTILOS A ESTAS VARAS</h1>
-                  <div class="field">
-                    <%= f.label "Contraseña" %>
-                    <%= f.password_field :password, autocomplete: "off" %>
-                    <i>(dejar en blanco si no la desea cambiar)</i>
-                  </div>
+                  <%= f.password_field :password, label: "Nueva contraseña",autocomplete: "off" %>
                   <hr/>
-                  <div class="field">
-                    <%= f.label "Confirmar contraseña" %>
-                    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-                  </div>
+                  <%= f.password_field :password_confirmation, label: "Confirmar nueva contraseña", autocomplete: "off" %>
                   <hr/>
-                  <div class="field">
-                    <%= f.label "Contraseña actual" %>
-                    <%= f.password_field :current_password, autocomplete: "off" %>
-                    <i>(insertar contraseña actual para confirmar cambios)</i>
-                  </div>
+                  <%= f.password_field :current_password, label: "Contraseña actual", autocomplete: "off" %>
                   <hr/>
-                  <div class="actions">
-                    <%= f.submit "Actualizar" %>
-                  </div>
+                  <%= f.submit "Actualizar" %>
                 <% end %>
-                <hr/>
-                <%= button_to "Eliminar cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %>
-                <!--
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Email</label>
-                        <div class="col-sm-9">
-                            <p class="form-control-static">emaildelusuario@example.com</p>
-                        </div>
-                    </div>
-                    <hr/>
-                    <div class="form-group">
-                        <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
-                        <div class="col-sm-9">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña nueva">
-                        </div>
-                    </div>
-                    <hr/>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Nombre de usuario</label>
-                        <div class="col-sm-9">
-                            <p class="form-control-static">nombre_del_usuario</p>
-                        </div>
-                    </div>
-                    <hr/>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Nombre completo</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <hr/>
-                    <div class="col-sm-11">
-                        <button type="button" class="btn btn-primary final-button">Guardar cambios</button>
-                    </div>
-                </form>
-                -->
             </div>
             
             <div class="tab-pane" id="pending"></div>
@@ -92,6 +37,8 @@
             <div class="tab-pane" id="admin"></div>
         </div>
     </div>
+    
+    <div class="col-md-1"></div>
 </div>
 
 <script>
