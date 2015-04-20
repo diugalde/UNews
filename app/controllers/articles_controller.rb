@@ -12,15 +12,16 @@ class ArticlesController < ApplicationController
     end
     
     def like
-      like = Like.new(user_id: current_user.id, article_id: params[:id])
-      if u.likes.where(["article_id = ? and user_id = ?", like.article_id, article.user_id]).blank?
-        article = Article.find(like.article_id)
-        article.update_column("likes", article.likes+1)
-        like.save
+      @like = Like.new(user_id: current_user.id, article_id: params[:id])
+      @article = Article.find(@like.article_id)
+      if Like.where(["article_id = ? and user_id = ?", @like.article_id, @like.user_id]).blank?
+        @like.save
+        @article.update_column("likes", @article.likes+1)
       else
-        
+        Like.find_by(user_id: current_user.id, article_id: params[:id]).destroy
+        @article.update_column("likes", @article.likes-1)
       end
-      
+      render :layout => false
     end
       
     def show

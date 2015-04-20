@@ -20,28 +20,29 @@
                   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                   <% end %>
-                  
+                  <h1 class="no">NO ENTIENDO COMO APLICARLE ESTILOS A ESTAS VARAS</h1>
                   <div class="field">
                     <%= f.label "Contraseña" %>
                     <%= f.password_field :password, autocomplete: "off" %>
                     <i>(dejar en blanco si no la desea cambiar)</i>
                   </div>
-                  
+                  <hr/>
                   <div class="field">
                     <%= f.label "Confirmar contraseña" %>
                     <%= f.password_field :password_confirmation, autocomplete: "off" %>
                   </div>
-                  
+                  <hr/>
                   <div class="field">
                     <%= f.label "Contraseña actual" %>
                     <%= f.password_field :current_password, autocomplete: "off" %>
                     <i>(insertar contraseña actual para confirmar cambios)</i>
                   </div>
-                  
+                  <hr/>
                   <div class="actions">
                     <%= f.submit "Actualizar" %>
                   </div>
                 <% end %>
+                <hr/>
                 <%= button_to "Eliminar cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %>
                 <!--
                 <form class="form-horizontal">

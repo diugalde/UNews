@@ -8,16 +8,30 @@
       <h2><%= article.title %></h2>
       <p><%= article.summary %></p>
       <%= link_to "Leer más...", article_path(article) %>
-      <div class="like-container">
-        <a class="like-button" href="/articles/<%= article.id %>/like"><i class="fa fa-thumbs-o-up fa-2x"></i></a>
+      <div class="like-container clear">
+        <button class="like-button" value="<%= article.id %>"><i class="fa fa-thumbs-o-up fa-2x"></i></button>
         <p id="like-<%= article.id %>"><%= article.likes %></p>
       </div>
     </div>
   </div>
 <% end %>
 
-            
-                
+<script>
+  
+  $(".like-button").click(function() {
+    var articleId = $(this).attr("value");
+    console.log(articleId);
+    var divTarget = "#like-"+articleId;
+    $.ajax({
+      method: "get",
+      url: "/articles/"+articleId+"/like",
+      async: true,
+      success: function(html){
+        $(divTarget).html(html);
+      }
+    }); 
+  });
+</script>
                 
                 
             
