@@ -1,1 +1,76 @@
-<h1>Hola mundo</h1>
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal">
+            <!--
+            <div id="uploader_div" class="ax-uploader">
+                <fieldset>
+                    <legend class="ax-legend">Select Files or Drag&amp;Drop Files</legend>
+                    <a class="ax-browse-c ax-button btn btn-primary" title="Add files">
+                        <span class="ax-plus-icon ax-icon icon-plus-sign"></span> 
+                        <span class="ax-text">Add files</span>
+                        <input type="file" class="ax-browse" name="ax_file_input" multiple="multiple">
+                    </a>
+                    <a class="ax-upload-all ax-button btn btn-success" title="Upload all files">
+                        <span class="ax-upload-icon ax-icon icon-play"></span> 
+                        <span>Start upload</span>
+                    </a>
+                    <a class="ax-clear ax-button btn btn-danger" title="Remove all">
+                        <span class="ax-clear-icon ax-icon icon-remove-sign"></span> 
+                        <span>Remove all</span>
+                    </a>
+                    <ul class="ax-file-list media-list"></ul>
+                </fieldset>
+            </div>
+            -->
+            <hr/>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Titulo de la noticia</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Resumen de la noticia</label>
+                <div class="col-md-7">
+                    <p id="summary-length">450</p>
+                    <textarea class="form-control" id="input-summary" maxlength="450" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Cuerpo de la noticia</label>
+                <div class="col-md-7">
+                    <p id="body-length">2000</p>
+                    <textarea class="form-control" id="input-body" maxlength="2000" rows="10"></textarea>
+                </div>
+            </div>
+            <hr/>
+            <div class="col-sm-11">
+                <button type="button" class="btn btn-primary final-button">Subir noticia</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+	/*
+	$('#uploader_div').ajaxupload({
+		url:'upload.php',
+		remotePath:'example10/',
+		bootstrap:true,
+		maxFileSize:'5M'
+	});*/
+	
+	$('#input-body').keyup(function(e) {
+        var len = $(this).val().length;
+        var remain = 2000 - len;
+        $("#body-length").text(remain);
+        if(remain == 0) $("#body-length").html("<label style ='color:red'>"+remain+"</label>");
+    });
+    
+    $('#input-summary').keyup(function(e) {
+        var len = $(this).val().length;
+        var remain = 450  - len;
+        $("#summary-length").text(remain);
+        if(remain == 0) $("#summary-length").html("<label style ='color:red'>"+remain+"</label>");
+    });
+</script>	

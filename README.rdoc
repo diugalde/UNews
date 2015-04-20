@@ -129,4 +129,3 @@ enter.erb
 		    assert_not @user.valid?, '#{ia.inspect} should be invalid'
 		end
 	end
-	

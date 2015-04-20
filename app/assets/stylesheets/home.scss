@@ -21,7 +21,7 @@
 }
 
 #search-input {
-    width: 400px;
+    width: 300px;
 }
 
 #search-button {
@@ -56,10 +56,12 @@
     height: 100%;
 }
 
-.info a {
-    margin-left: 250px;
-    position: absolute;
-    bottom: 0;
+.like-container {
+    float: right;
+}
+
+.like-container a, .like-container p {
+    display: inline-block;
 }
 
 .news-box {
@@ -67,6 +69,7 @@
     border-bottom: 2px solid #337AB7;
     border-right: 5px solid #337AB7;
     padding-bottom: 5px;
+    margin-bottom: 45px;
 }
 
 #like-button {

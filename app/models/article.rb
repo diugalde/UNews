@@ -1,7 +1,8 @@
 class Article < ActiveRecord::Base
     
     #Associations
-   # belongs_to :user
+    belongs_to :user
+    has_many :comments
     
     #Validations
     #validates :user_id, presence: true

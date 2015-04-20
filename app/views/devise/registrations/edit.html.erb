@@ -1,39 +1,111 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="row" id="profile-row">
+    <div class="col-md-2" id="profile-tabs">
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li value="config" class=" active profile-tab"><a href="#config" data-toggle="tab">Configuraciones</a></li>
+                <li value="pending" class="profile-tab"><a href="#pending" data-toggle="tab">Noticias Pendientes</a></li>
+                <li value="accepted" class="profile-tab"><a href="#accepted" data-toggle="tab">Noticias Aceptadas</a></li>
+                <li value="rejected" class="profile-tab"><a href="#rejected" data-toggle="tab">Noticias Rechazadas</a></li>
+                <li value="deleted" class="profile-tab"><a href="#deleted" data-toggle="tab">Noticias Eliminadas</a></li>
+                <li value="admin" class="profile-tab"><a href="#admin" data-toggle="tab">Administracion</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="tab-content">
+            <div class="tab-pane active" id="config">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                  <%= devise_error_messages! %>
+                
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                  <% end %>
+                  
+                  <div class="field">
+                    <%= f.label "Contraseña" %>
+                    <%= f.password_field :password, autocomplete: "off" %>
+                    <i>(dejar en blanco si no la desea cambiar)</i>
+                  </div>
+                  
+                  <div class="field">
+                    <%= f.label "Confirmar contraseña" %>
+                    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                  </div>
+                  
+                  <div class="field">
+                    <%= f.label "Contraseña actual" %>
+                    <%= f.password_field :current_password, autocomplete: "off" %>
+                    <i>(insertar contraseña actual para confirmar cambios)</i>
+                  </div>
+                  
+                  <div class="actions">
+                    <%= f.submit "Actualizar" %>
+                  </div>
+                <% end %>
+                <%= button_to "Eliminar cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %>
+                <!--
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static">emaildelusuario@example.com</p>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña nueva">
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Nombre de usuario</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static">nombre_del_usuario</p>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Nombre completo</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="col-sm-11">
+                        <button type="button" class="btn btn-primary final-button">Guardar cambios</button>
+                    </div>
+                </form>
+                -->
+            </div>
+            
+            <div class="tab-pane" id="pending"></div>
+            
+            <div class="tab-pane" id="accepted"></div>
+            
+            <div class="tab-pane" id="rejected"></div>
+            
+            <div class="tab-pane" id="deleted"></div>
+            
+            <div class="tab-pane" id="admin"></div>
+        </div>
+    </div>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<script>
+    $('.profile-tab').click(function () {
+        var tabId = $(this).attr("value");
+        if (tabId != "admin" && tabId != "config") {
+            $.ajax({
+                method: "post",
+                url: "/articles/state",
+                async: true,
+                data: {'state':tabId},
+                success: function(html){
+                    $("#" + tabId).html(html);
+                }
+            });
+        }
+    });
+</script>

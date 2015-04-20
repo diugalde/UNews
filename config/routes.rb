@@ -3,8 +3,6 @@ Rails.application.routes.draw do
     root 'pages#home'
     
     devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
-    
-    get '/articles/index', to: 'articles#index'
 
     get '/home', to: 'pages#home'
   
@@ -12,15 +10,11 @@ Rails.application.routes.draw do
     
     get '/enter', to: 'users#enter'
     
-    resources :users, except: [:new]
+    resources :users
     
-    get '/register', to: 'users#new'
+    resources :articles
     
-    get '/newgplus', to: 'users#newgplus'
+    post '/articles/state', to: 'articles#index_state'
     
-    resources :articles, except: [:new]
-    
-    get '/create_article', to: 'articles#new'
-    
-    get '/new_article', to: 'pages#new_article'
+    get '/articles/:id/like', to: 'articles#like'
 end

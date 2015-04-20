@@ -1,43 +1,23 @@
 <nav class="home-nav">
-    
     <%= render 'layouts/partials/home_nav' %>
-    
 </nav>
-
-<button id="test-button">Cargar con Ajax</button>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-10" id="news-container">
-            <div class="row news-box">
-                <div class="col-md-3">
-                  <img class="img-responsive img-rounded" src="http://chupacabras2.weebly.com/uploads/1/9/1/4/19142641/5184305_orig.jpg"/>
-                </div>
-                
-                <div class="col-md-9 info">
-                  <h2>Loro loco en Palmares</h2>
-                  <p>Un loro se vuelve loco en un pueblo de Palmares y ataca a 3 personas, su dueño Marvin Carranza, no lo logro controlar mientras daban un paseo por el parque central.</p>
-                  <a href="#">Leer mas...</a>
-                </div>
-            </div>
-          </div>
-        
+        <div class="col-md-10" id="news-container"></div>
+
         <%= render 'layouts/partials/home_sidebar' %>
-        
     </div>
 </div>
 
 
 <div id="test-container"></div>
 <script>
-    
-    $("#test-button").click(function() {
-        $.ajax({
-            url: "/articles/index",
-            async: true,
-            success: function(html){
-              $("#test-container").html(html);
-            }
-        }); 
-    });
+    $.ajax({
+        url: "/articles",
+        async: true,
+        success: function(html){
+          $("#news-container").html(html);
+        }
+    }); 
 </script>
