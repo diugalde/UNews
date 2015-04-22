@@ -12,11 +12,13 @@
         </div>
         <div class="col-md-5 summary-container">
             <!-- Article summary column -->
+            <p class="article-category"> Categoria: <%= @article.category %> </p>
             <h3>Resumen</h3>
-            <%= @article.summary %>
+            <p> <%= @article.summary %> </p>
             <% if @article.link %>
                 <a class="article-link" href="<%= @article.link %>">Enlace de referencia</a>
             <% end %>
+            <span class="date sub-text show-article-date"> <%= @article.created_at %> </span>
         </div>
         <!-- Empty column -->
         <div class="col-md-1"></div>

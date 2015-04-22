@@ -34,7 +34,7 @@
 
 .home-nav nav {
     background-color: #337AB7;
-    margin: 0 0 20px 0;
+    margin: 0 0 65px 0;
     border-radius: 0px !important;
     border: none;
     padding-left: 25%;
@@ -54,10 +54,12 @@
 
 .info {
     height: 100%;
+    padding-right: 0 !important;
 }
 
 .like-container {
     float: right;
+    margin-right: 10px;
 }
 
 .like-container a, .like-container p {
@@ -69,7 +71,7 @@
     border-bottom: 2px solid #337AB7;
     border-right: 5px solid #337AB7;
     padding-bottom: 5px;
-    margin-bottom: 45px;
+    margin-bottom: 65px;
 }
 
 .nav-devise-links {
@@ -81,6 +83,20 @@
     color: white !important;
 }
 
+.like-button {
+    color: #031728;
+}
+
 .like-button:hover {
     color: #337AB7;
+}
+
+.float-right {
+    float: right;
+    background-color: #337AB7;
+    color: white;
+    font-size: 1em;
+    width: 120px;
+    padding: 5px;
+    text-align: center;
 }

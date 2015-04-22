@@ -6,8 +6,8 @@
 
 .article-link {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 20px;
+    right: 0px;
 }
 
 .summary-container {
@@ -32,4 +32,15 @@
 
 #comments {
     width: 100%;
+}
+
+.show-article-date {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.article-category {
+    float: right;
+    font-size: 16px;
 }

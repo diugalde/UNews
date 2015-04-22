@@ -1,7 +1,12 @@
 class ArticlesController < ApplicationController
     
     def index
-      @articles = Article.all 
+      category = params[:category]
+      if category && category != "todas"
+        @articles = Article.where(:category => category)
+      else
+        @articles = Article.all 
+      end
       render :layout => false
     end
   
@@ -57,7 +62,7 @@ class ArticlesController < ApplicationController
     
     private
     def article_params
-      params.require(:article).permit(:title, :summary, :body) 
+      params.require(:article).permit(:title, :summary, :body, :category, :link) 
     end
     
 end

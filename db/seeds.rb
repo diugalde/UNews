@@ -8,15 +8,15 @@
 
 
 articles = Article.create([ 
-    {title: "El señor de los anillos 1", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "pending", user_id: 5, likes: 0, category: "mundo", link: "http://www.dieg8.com/UGraphs"},
-    {title: "El señor de los anillos 2", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "pending", user_id: 5, likes: 0, category: "costa rica"}, 
-    {title: "El señor de los anillos 3", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "pending", user_id: 5, likes: 0, category: "deportes"},
-    {title: "El señor de los anillos 4", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "accepted", user_id: 5, likes: 0, category: "entretenimiento"},
-    {title: "El señor de los anillos 5", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "accepted", user_id: 5, likes: 0, category: "tecnologia"}, 
-    {title: "El señor de los anillos 6", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "accepted", user_id: 5, likes: 0, category: "ciencia"},
-    {title: "El señor de los anillos 7", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "deleted", user_id: 5, likes: 0, category: "salud"},
-    {title: "El señor de los anillos 8", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "rejected", user_id: 5, likes: 0, category: "negocio"}, 
-    {title: "El señor de los anillos 9", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "rejected", user_id: 5, likes: 0, category: "costa rica"}])
+    {title: "El señor de los anillos 1", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "pending", user_id: 5, likes: 0, category: "Mundo", link: "http://www.dieg8.com/UGraphs"},
+    {title: "El señor de los anillos 2", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "pending", user_id: 5, likes: 0, category: "Costa rica"}, 
+    {title: "El señor de los anillos 3", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "pending", user_id: 5, likes: 0, category: "Deportes"},
+    {title: "El señor de los anillos 4", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "accepted", user_id: 5, likes: 0, category: "Entretenimiento"},
+    {title: "El señor de los anillos 5", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "accepted", user_id: 5, likes: 0, category: "Tecnologia"}, 
+    {title: "El señor de los anillos 6", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "accepted", user_id: 5, likes: 0, category: "Ciencia"},
+    {title: "El señor de los anillos 7", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "deleted", user_id: 5, likes: 0, category: "Salud"},
+    {title: "El señor de los anillos 8", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "rejected", user_id: 5, likes: 0, category: "Negocio"}, 
+    {title: "El señor de los anillos 9", summary: "Encontrando un anillo místico", body: "Mejor película del 2010", state: "rejected", user_id: 5, likes: 0, category: "Costa rica"}])
     
     
     

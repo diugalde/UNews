@@ -4,14 +4,15 @@
       <img class="img-responsive img-rounded" src="http://makeameme.org/media/created/My-nigga-my-ypdrm5.jpg"/>
     </div>
     <div class="col-md-9 info">
-
+      <p class="float-right"> <%= article.category %> </p>
       <h2><%= article.title %></h2>
       <p><%= article.summary %></p>
       <%= link_to "Leer más...", article_path(article) %>
       <div class="like-container clear">
-        <button class="like-button" value="<%= article.id %>"><i class="fa fa-thumbs-o-up fa-2x"></i></button>
+        <a class="like-button" value="<%= article.id %>"><i class="fa fa-thumbs-o-up fa-2x"></i></a>
         <p id="like-<%= article.id %>"><%= article.likes %></p>
       </div>
+      <span class="date sub-text"> <%= article.created_at %> </span>
     </div>
   </div>
 <% end %>

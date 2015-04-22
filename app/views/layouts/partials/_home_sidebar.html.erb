@@ -1,13 +1,30 @@
 <div class="col-md-2 col-sm-3 col-xs-4" id="sidebar">
     <ul class="nav nav-pills nav-stacked" id="sidebar-nav">
-        <li class="active"><a href="#">Todas</a></li>
-        <li><a href="#">Mundo</a></li>
-        <li><a href="#">Costa Rica</a></li>
-        <li><a href="#">Deportes</a></li>
-        <li><a href="#">Entretenimiento</a></li>
-        <li><a href="#">Tecnologia</a></li>
-        <li><a href="#">Ciencia</a></li>
-        <li><a href="#">Salud</a></li>
-        <li><a href="#">Negocio</a></li>
+        <li value="todas" class="active side-tab"><a href="#">Todas</a></li>
+        <li value="Mundo" class="side-tab"><a href="#">Mundo</a></li>
+        <li value="Costa rica" class="side-tab"><a href="#">Costa Rica</a></li>
+        <li value="Deportes" class="side-tab"><a href="#">Deportes</a></li>
+        <li value="Entretenimiento" class="side-tab"><a href="#">Entretenimiento</a></li>
+        <li value="Tecnologia" class="side-tab"><a href="#">Tecnologia</a></li>
+        <li value="Ciencia" class="side-tab"><a href="#">Ciencia</a></li>
+        <li value="Salud" class="side-tab"><a href="#">Salud</a></li>
+        <li value="Negocio" class="side-tab"><a href="#">Negocio</a></li>
     </ul>
 </div>
+
+<script>
+    $(".side-tab").click(function() {
+        $(".active").removeClass("active"); 
+        $(this).addClass("active");
+        var cat = $(this).attr("value");
+        $.ajax({
+            method: "get",
+            url: "/articles",
+            async: true,
+            data: {category: cat},
+            success: function(html){
+              $("#news-container").html(html);
+            }
+      }); 
+    });
+</script>
