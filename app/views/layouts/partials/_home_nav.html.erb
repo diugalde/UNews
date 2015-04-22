@@ -13,21 +13,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="home-navbar-collapse">
           <ul class="nav navbar-nav navbar-search-container">
-            <li class="dropdown" id="categories-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorias<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Todas</a></li>
-                <li><a href="#">Mundo</a></li>
-                <li><a href="#">Costa Rica</a></li>
-                <li><a href="#">Deportes</a></li>
-                <li><a href="#">Entretenimiento</a></li>
-                <li><a href="#">Tecnologia</a></li>
-                <li><a href="#">Ciencia</a></li>
-                <li><a href="#">Salud</a></li>
-                <li><a href="#">Negocio</a></li>
-              </ul>
-            </li>
-            <li>
+            <li id="search-li">
               <form class="navbar-form" role="search" id="search-bar">
                 <div class="form-group">
                   <div id="search-bar-container">
@@ -38,7 +24,7 @@
               </form>
             </li>
             <ul class="nav navbar-nav navbar-right">
-              <li class="pull-right">
+              <li>
                   <% if user_signed_in? %>
                     <a class="new-article-button" href="/articles/new">Crear noticia <i class="fa fa-pencil-square-o"></i></a>
                   <% end %>

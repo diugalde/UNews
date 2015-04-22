@@ -50,8 +50,3 @@ gem "font-awesome-rails"
 gem 'devise'
 # Use omniauth for facebook
 gem 'omniauth-facebook'
-
-# Use for image uploads
-gem 'dragonfly'
-gem 'dragonfly-s3_data_store'
-gem 'remotipart', '~> 1.2'
