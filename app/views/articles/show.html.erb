@@ -14,7 +14,7 @@
             <!-- Article summary column -->
             <p class="article-category"> Categoria: <%= @article.category %> </p>
             <h3>Resumen</h3>
-            <p> <%= @article.summary %> </p>
+            <p class="justify-text"> <%= @article.summary %> </p>
             <% if @article.link %>
                 <a class="article-link" href="<%= @article.link %>">Enlace de referencia</a>
             <% end %>
@@ -27,7 +27,7 @@
     <div class="row">
         <!-- Article body column -->
         <div class="col-md-10 col-md-offset-1">
-            <%= @article.body %>
+            <p class="justify-text"> <%= @article.body %> </p>
         </div>
     </div>
     <hr/>

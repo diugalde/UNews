@@ -18,6 +18,9 @@
     display: none;
     width: 100%;
     margin-bottom: 60px;
+    padding: 10px;
+    background-color: #E8E8E8;
+    border-radius: 32px;
 }
 
 .comments-column {
@@ -43,4 +46,9 @@
 .article-category {
     float: right;
     font-size: 16px;
+}
+
+.justify-text {
+    text-align: justify;
+    margin-right: 10px;
 }

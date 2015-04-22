@@ -7,7 +7,7 @@
                 </div>
                 <div class="comment-text">
                     <p> <%= comment.content %> </p>
-                    <span class="date sub-text"> <%= comment.created_at %> </span>
+                    <span class="date sub-text comment-date"> <%= comment.created_at %> </span>
                 </div>
             </div>
         </li>
@@ -17,6 +17,7 @@
     <input class="form-control" id="comment-input" type="text" placeholder="Escribe un comentario" />
     <button class="btn btn-primary send-comment-button" value="<%= @article_id %>">Comentar <i class="fa fa-comment"></i></button>
 </form>
+<br/><br/>
 
 <script>
     $('.send-comment-button').click(function () {

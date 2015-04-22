@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>UNews</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,12 +14,13 @@
           <p class="navbar-text pull-right nav-devise-links">
           <% if user_signed_in? %>
             Usuario: <strong id="current-user-nav"><%= current_user.email %></strong>
-            <%= link_to ' Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to 'Mi Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
             <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
           <% else %>
             <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
             <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
-            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+            <br/>
+            <%= link_to "Entrar con Facebook", user_omniauth_authorize_path(:facebook) %>
           <% end %>
     </div>
   </header>

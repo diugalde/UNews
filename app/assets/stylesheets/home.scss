@@ -72,8 +72,13 @@
     border-right: 5px solid #337AB7;
     padding-bottom: 5px;
     margin-bottom: 65px;
+    background-color: #E8E8E8;
 }
 
+.img-news-box {
+    margin-top: 10px;
+    
+}
 .nav-devise-links {
     padding-top: 10px;
     color: white !important;
@@ -99,4 +104,8 @@
     width: 120px;
     padding: 5px;
     text-align: center;
+}
+
+.new-article-button {
+    color: white !important;
 }

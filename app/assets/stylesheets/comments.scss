@@ -8,7 +8,6 @@
 }
 
 .comment-list li {
-    margin: 0;
     margin-top: 20px;
     width: 100%;
 }
@@ -23,9 +22,16 @@
 .commenter-name {
     float: left;
     width: 100%;
+    font-weight: bold;
+    border-top: 1px dashed #337AB7;
+    padding-top: 5px;
 }
 
 .comment-form {
     margin-bottom: 20px;
     float: right;
+}
+
+.comment-date {
+    margin-bottom: 25px;
 }

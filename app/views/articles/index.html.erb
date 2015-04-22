@@ -1,12 +1,12 @@
 <% @articles.each do |article| %>
   <div class="row news-box">
-    <div class="col-md-3">
+    <div class="col-md-3 img-news-box">
       <img class="img-responsive img-rounded" src="http://makeameme.org/media/created/My-nigga-my-ypdrm5.jpg"/>
     </div>
     <div class="col-md-9 info">
       <p class="float-right"> <%= article.category %> </p>
       <h2><%= article.title %></h2>
-      <p><%= article.summary %></p>
+      <p class="justify-text"><%= article.summary %></p>
       <%= link_to "Leer más...", article_path(article) %>
       <div class="like-container clear">
         <a class="like-button" value="<%= article.id %>"><i class="fa fa-thumbs-o-up fa-2x"></i></a>

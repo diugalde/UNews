@@ -52,6 +52,14 @@ class ArticlesController < ApplicationController
     
     def create
       @article = Article.new(article_params)
+      @article.user_id = current_user.id;
+      @article.state = "pending"
+      @article.likes = 0
+      if @article.save
+        redirect_to url_for(:controller => :pages, :action => :home)
+      else
+        render :action => 'new'
+      end
     end
     
     def edit

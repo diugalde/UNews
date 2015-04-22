@@ -37,6 +37,13 @@
                 </div>
               </form>
             </li>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right">
+                  <% if user_signed_in? %>
+                    <a class="new-article-button" href="/articles/new">Crear noticia <i class="fa fa-pencil-square-o"></i></a>
+                  <% end %>
+              </li>
+            </ul>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
